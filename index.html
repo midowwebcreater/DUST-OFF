@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>DUST OFF SERVICES | Premium Home Service</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Montserrat',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#050b14;
+color:white;
+overflow-x:hidden;
+}
+
+header{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+padding:22px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(5,10,20,.94);
+backdrop-filter:blur(12px);
+z-index:9999;
+border-bottom:1px solid rgba(255,255,255,.06);
+}
+
+.logo{
+font-size:34px;
+font-weight:900;
+}
+
+.logo span{
+color:#1f8fff;
+}
+
+nav{
+display:flex;
+gap:35px;
+}
+
+nav a{
+text-decoration:none;
+color:white;
+font-weight:600;
+font-size:15px;
+transition:.3s;
+}
+
+nav a:hover{
+color:#1f8fff;
+}
+
+.call-btn{
+padding:14px 28px;
+background:linear-gradient(135deg,#1f8fff,#0057d8);
+border-radius:12px;
+text-decoration:none;
+color:white;
+font-weight:700;
+box-shadow:0 10px 30px rgba(0,102,255,.3);
+}
+
+.hero{
+height:100vh;
+background:
+linear-gradient(to right, rgba(2,6,14,.94), rgba(2,6,14,.75)),
+url('hero.jpg');
+background-size:cover;
+background-position:center;
+display:flex;
+align-items:center;
+padding:0 8%;
+position:relative;
+}
+
+.hero::before{
+content:'';
+position:absolute;
+right:-100px;
+top:50px;
+width:500px;
+height:500px;
+background:#1479ff;
+filter:blur(180px);
+opacity:.16;
+}
+
+.hero-content{
+max-width:760px;
+position:relative;
+z-index:2;
+}
+
+.tag{
+display:inline-block;
+padding:12px 22px;
+border-radius:50px;
+background:rgba(255,255,255,.05);
+border:1px solid rgba(255,255,255,.08);
+color:#1f8fff;
+font-size:14px;
+font-weight:700;
+letter-spacing:2px;
+margin-bottom:28px;
+}
+
+.hero h1{
+font-size:88px;
+line-height:1.02;
+font-weight:900;
+margin-bottom:30px;
+}
+
+.hero h1 span{
+color:#1f8fff;
+}
+
+.hero p{
+font-size:19px;
+line-height:1.9;
+color:#d0d8e3;
+max-width:650px;
+margin-bottom:40px;
+}
+
+.hero-buttons{
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.btn{
+padding:17px 40px;
+background:linear-gradient(135deg,#1f8fff,#0059de);
+border-radius:14px;
+text-decoration:none;
+font-weight:700;
+color:white;
+transition:.35s;
+box-shadow:0 10px 30px rgba(0,102,255,.28);
+}
+
+.btn:hover{
+transform:translateY(-4px);
+}
+
+.btn-secondary{
+background:transparent;
+border:2px solid rgba(255,255,255,.18);
+box-shadow:none;
+}
+
+.stats{
+display:flex;
+gap:50px;
+margin-top:55px;
+flex-wrap:wrap;
+}
+
+.stat h2{
+font-size:42px;
+color:#1f8fff;
+margin-bottom:5px;
+}
+
+.stat p{
+font-size:14px;
+color:#c7d0db;
+}
+
+section{
+padding:110px 8%;
+}
+
+.section-title{
+text-align:center;
+margin-bottom:70px;
+}
+
+.section-title h2{
+font-size:58px;
+font-weight:900;
+margin-bottom:14px;
+}
+
+.section-title p{
+font-size:17px;
+color:#c9d3de;
+}
+
+.services-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+}
+
+.service-card{
+background:linear-gradient(180deg,#0c1728,#09111f);
+border-radius:24px;
+overflow:hidden;
+border:1px solid rgba(255,255,255,.05);
+transition:.4s;
+}
+
+.service-card:hover{
+transform:translateY(-10px);
+border-color:#1f8fff;
+}
+
+.service-card img{
+width:100%;
+height:240px;
+object-fit:cover;
+}
+
+.service-content{
+padding:35px;
+}
+
+.service-content h3{
+font-size:30px;
+margin-bottom:18px;
+}
+
+.service-content p{
+line-height:1.9;
+color:#d4dce7;
+}
+
+.pricing-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(330px,1fr));
+gap:35px;
+}
+
+.price-card{
+background:linear-gradient(180deg,#0b1627,#08111f);
+padding:48px;
+border-radius:28px;
+border:1px solid rgba(255,255,255,.06);
+position:relative;
+overflow:hidden;
+transition:.4s;
+}
+
+.price-card:hover{
+transform:translateY(-10px);
+}
+
+.featured{
+border:2px solid #1f8fff;
+}
+
+.ribbon{
+position:absolute;
+top:20px;
+right:-45px;
+background:#1f8fff;
+padding:12px 55px;
+transform:rotate(45deg);
+font-size:12px;
+font-weight:700;
+}
+
+.price-card h3{
+font-size:34px;
+margin-bottom:20px;
+}
+
+.price{
+font-size:68px;
+font-weight:900;
+color:#1f8fff;
+margin-bottom:16px;
+}
+
+.price-sub{
+margin-bottom:22px;
+color:#c9d1dc;
+}
+
+.price-card ul{
+list-style:none;
+}
+
+.price-card ul li{
+margin-bottom:15px;
+font-size:16px;
+color:#dbe4ef;
+}
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+}
+
+.gallery-card{
+position:relative;
+overflow:hidden;
+border-radius:22px;
+}
+
+.gallery-card img{
+width:100%;
+height:280px;
+object-fit:cover;
+transition:.4s;
+}
+
+.gallery-card:hover img{
+transform:scale(1.08);
+}
+
+.overlay{
+position:absolute;
+bottom:0;
+left:0;
+width:100%;
+padding:28px;
+background:linear-gradient(transparent,rgba(0,0,0,.95));
+}
+
+.overlay h3{
+font-size:28px;
+margin-bottom:8px;
+}
+
+.overlay p{
+color:#d4d4d4;
+}
+
+.review-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:30px;
+}
+
+.review-card{
+background:#0d1b2d;
+padding:38px;
+border-radius:22px;
+}
+
+.stars{
+font-size:24px;
+color:#1f8fff;
+margin-bottom:18px;
+}
+
+.review-card p{
+line-height:1.9;
+color:#d5dce7;
+margin-bottom:20px;
+}
+
+.review-card h4{
+font-size:20px;
+}
+
+.cta{
+background:linear-gradient(135deg,#10203a,#132d4f);
+padding:90px;
+border-radius:35px;
+text-align:center;
+position:relative;
+overflow:hidden;
+}
+
+.cta::before{
+content:'';
+position:absolute;
+width:500px;
+height:500px;
+background:#1479ff;
+filter:blur(180px);
+opacity:.15;
+top:-200px;
+right:-100px;
+}
+
+.cta h2{
+font-size:65px;
+font-weight:900;
+margin-bottom:22px;
+position:relative;
+z-index:2;
+}
+
+.cta p{
+max-width:850px;
+margin:auto;
+line-height:2;
+font-size:18px;
+color:#d1dae5;
+margin-bottom:38px;
+position:relative;
+z-index:2;
+}
+
+footer{
+background:#030811;
+padding:60px 8%;
+text-align:center;
+border-top:1px solid rgba(255,255,255,.06);
+}
+
+footer h2{
+font-size:42px;
+margin-bottom:15px;
+}
+
+footer p{
+color:#c0cad6;
+margin-bottom:10px;
+}
+
+.whatsapp{
+position:fixed;
+bottom:25px;
+right:25px;
+padding:18px 30px;
+background:#25d366;
+color:white;
+font-weight:700;
+border-radius:50px;
+text-decoration:none;
+z-index:9999;
+box-shadow:0 10px 30px rgba(0,0,0,.4);
+animation:float 2s infinite;
+}
+
+@keyframes float{
+
+0%{
+transform:translateY(0px);
+}
+
+50%{
+transform:translateY(-5px);
+}
+
+100%{
+transform:translateY(0px);
+}
+
+}
+
+@media(max-width:768px){
+
+header{
+padding:18px 5%;
+}
+
+nav{
+display:none;
+}
+
+.hero{
+padding:0 5%;
+}
+
+.hero h1{
+font-size:48px;
+}
+
+.hero p{
+font-size:16px;
+}
+
+.hero-buttons{
+flex-direction:column;
+}
+
+.section-title h2{
+font-size:40px;
+}
+
+.cta{
+padding:55px 25px;
+}
+
+.cta h2{
+font-size:42px;
+}
+
+.price{
+font-size:52px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+DUST OFF <span>SERVICES</span>
+</div>
+
+<nav>
+<a href="#">Home</a>
+<a href="#services">Services</a>
+<a href="#pricing">Pricing</a>
+<a href="#gallery">Gallery</a>
+<a href="#reviews">Reviews</a>
+<a href="#contact">Contact</a>
+</nav>
+
+<a href="tel:+917262055025" class="call-btn">
+CALL NOW
+</a>
+
+</header>
+
+<section class="hero">
+
+<div class="hero-content">
+
+<div class="tag">
+PREMIUM HOME SERVICE COMPANY
+</div>
+
+<h1>
+PROFESSIONAL <span>HOME CLEANING</span> & CAR WASH
+</h1>
+
+<p>
+DUST OFF SERVICES provides premium doorstep cleaning, sofa cleaning, water tank cleaning and car wash services across Amravati with trained professionals and corporate-level quality standards.
+</p>
+
+<div class="hero-buttons">
+
+<a href="https://wa.me/917262055025" class="btn">
+BOOK NOW
+</a>
+
+<a href="tel:+917262055025" class="btn btn-secondary">
+CALL US
+</a>
+
+</div>
+
+<div class="stats">
+
+<div class="stat">
+<h2>500+</h2>
+<p>Happy Customers</p>
+</div>
+
+<div class="stat">
+<h2>4.9★</h2>
+<p>Customer Rating</p>
+</div>
+
+<div class="stat">
+<h2>100%</h2>
+<p>Satisfaction</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="services">
+
+<div class="section-title">
+<h2>OUR PROFESSIONAL SERVICES</h2>
+<p>Premium doorstep cleaning solutions in Amravati</p>
+</div>
+
+<div class="services-grid">
+
+<div class="service-card">
+
+<img src="home-cleaning.jpg">
+
+<div class="service-content">
+
+<h3>Home Cleaning</h3>
+
+<p>
+Complete deep home cleaning for apartments, villas and residential spaces with premium hygiene treatment.
+</p>
+
+</div>
+
+</div>
+
+<div class="service-card">
+
+<img src="sofa-cleaning.jpg">
+
+<div class="service-content">
+
+<h3>Sofa Cleaning</h3>
+
+<p>
+Advanced stain removal and professional sofa shampoo cleaning using premium equipment.
+</p>
+
+</div>
+
+</div>
+
+<div class="service-card">
+
+<img src="car-wash.jpg">
+
+<div class="service-content">
+
+<h3>Car Wash</h3>
+
+<p>
+Premium foam wash, vacuum cleaning and doorstep car detailing services with monthly packages.
+</p>
+
+</div>
+
+</div>
+
+<div class="service-card">
+
+<img src="tank-cleaning.jpg">
+
+<div class="service-content">
+
+<h3>Water Tank Cleaning</h3>
+
+<p>
+Professional underground and overhead water tank cleaning with hygienic treatment.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="pricing">
+
+<div class="section-title">
+<h2>CAR WASH PACKAGES</h2>
+<p>Corporate-level premium pricing</p>
+</div>
+
+<div class="pricing-grid">
+
+<div class="price-card">
+
+<h3>Basic Car Wash</h3>
+
+<div class="price">
+₹249
+</div>
+
+<div class="price-sub">
+Single Time Service
+</div>
+
+<ul>
+<li>✔ Outer Body Wash With Foam</li>
+<li>✔ Basic Interior Cleaning</li>
+<li>✔ Doorstep Service</li>
+<li>✔ Premium Finish</li>
+</ul>
+
+</div>
+
+<div class="price-card featured">
+
+<div class="ribbon">
+POPULAR
+</div>
+
+<h3>Premium Car Wash</h3>
+
+<div class="price">
+₹349
+</div>
+
+<div class="price-sub">
+Single Time Service
+</div>
+
+<ul>
+<li>✔ Foam Wash</li>
+<li>✔ Deep Interior Cleaning</li>
+<li>✔ Vacuum Cleaning</li>
+<li>✔ Professional Interior Care</li>
+</ul>
+
+</div>
+
+<div class="price-card">
+
+<h3>4 Wash Service</h3>
+
+<div class="price">
+₹799
+</div>
+
+<div class="price-sub">
+Monthly Package
+</div>
+
+<ul>
+<li>✔ 4 Exterior Foam Washes</li>
+<li>✔ Basic Interior Cleaning</li>
+<li>✔ Doorstep Service</li>
+<li>✔ Affordable Monthly Care</li>
+</ul>
+
+</div>
+
+<div class="price-card">
+
+<h3>Premium 4 Wash Service</h3>
+
+<div class="price">
+₹1199
+</div>
+
+<div class="price-sub">
+Monthly Package
+</div>
+
+<ul>
+<li>✔ Deep Interior Cleaning</li>
+<li>✔ Vacuum Cleaning</li>
+<li>✔ Dust & Dirt Removal</li>
+<li>✔ Professional Car Wash</li>
+</ul>
+
+</div>
+
+<div class="price-card featured">
+
+<div class="ribbon">
+BEST VALUE
+</div>
+
+<h3>Ultimate 4 Wash Service</h3>
+
+<div class="price">
+₹1499
+</div>
+
+<div class="price-sub">
+Monthly Package
+</div>
+
+<ul>
+<li>✔ Underbody Deep Cleaning</li>
+<li>✔ Deep Interior Cleaning</li>
+<li>✔ Vacuum Cleaning</li>
+<li>✔ Premium Protection Finish</li>
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="gallery">
+
+<div class="section-title">
+<h2>OUR GALLERY</h2>
+<p>Professional cleaning in action</p>
+</div>
+
+<div class="gallery">
+
+<div class="gallery-card">
+<img src="gallery1.jpg">
+
+<div class="overlay">
+<h3>Professional Cleaning</h3>
+<p>Premium hygiene solutions</p>
+</div>
+
+</div>
+
+<div class="gallery-card">
+<img src="gallery2.jpg">
+
+<div class="overlay">
+<h3>Doorstep Car Wash</h3>
+<p>Advanced foam cleaning</p>
+</div>
+
+</div>
+
+<div class="gallery-card">
+<img src="gallery3.jpg">
+
+<div class="overlay">
+<h3>Premium Home Service</h3>
+<p>Trusted professional team</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="reviews">
+
+<div class="section-title">
+<h2>CUSTOMER REVIEWS</h2>
+<p>Trusted by happy customers</p>
+</div>
+
+<div class="review-grid">
+
+<div class="review-card">
+
+<div class="stars">
+★★★★★
+</div>
+
+<p>
+“Best doorstep cleaning and car wash service in Amravati. Professional staff and premium quality work.”
+</p>
+
+<h4>Rahul Patil</h4>
+
+</div>
+
+<div class="review-card">
+
+<div class="stars">
+★★★★★
+</div>
+
+<p>
+“Very professional home cleaning service with affordable pricing and fast response.”
+</p>
+
+<h4>Aman Deshmukh</h4>
+
+</div>
+
+<div class="review-card">
+
+<div class="stars">
+★★★★★
+</div>
+
+<p>
+“Excellent customer support and premium cleaning results. Highly recommended.”
+</p>
+
+<h4>Priya Sharma</h4>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="contact">
+
+<div class="cta">
+
+<h2>
+BOOK YOUR SERVICE TODAY
+</h2>
+
+<p>
+Experience premium doorstep cleaning and hygiene services with DUST OFF SERVICES. Fast booking, trained professionals and corporate-level service quality.
+</p>
+
+<a href="https://wa.me/917262055025" class="btn">
+WHATSAPP NOW
+</a>
+
+</div>
+
+</section>
+
+<footer>
+
+<h2>DUST OFF SERVICES</h2>
+
+<p>
+Professional Cleaning & Home Service Company
+</p>
+
+<p>
+📞 +91 72620 55025
+</p>
+
+<p>
+Amravati, Maharashtra
+</p>
+
+</footer>
+
+<a href="https://wa.me/917262055025" class="whatsapp">
+WhatsApp
+</a>
+
+</body>
+  </html>
